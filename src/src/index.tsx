@@ -1,6 +1,6 @@
-import { LocationProvider, Router, Route, hydrate, prerender as ssr } from 'preact-iso';
-import { ConnectKitProviderWrapper } from './components/ConnectKitProvider';
-import { Home } from './pages/Home/index.jsx';
+import { LocationProvider, Router, hydrate, prerender as ssr } from 'preact-iso';
+import { ConnectKitProviderWrapper } from './providers/ConnectKitProvider';
+import { Home } from './pages/Home';
 import { NotFound } from './pages/_404.jsx';
 import './style.css';
 

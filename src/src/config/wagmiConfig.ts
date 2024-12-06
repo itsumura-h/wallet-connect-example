@@ -1,15 +1,18 @@
 import { http, createConfig } from "wagmi";
-import { sepolia } from "wagmi/chains";
-import { ConnectKitProvider, getDefaultConfig } from "connectkit";
+import { mainnet, polygon, sepolia, anvil } from "wagmi/chains";
+import { getDefaultConfig } from "connectkit";
 import { WALLETCONNECT_PROJECT_ID } from "../config/env";
 
 export const wagmiConfig = createConfig(
   getDefaultConfig({
     // Your dApps chains
-    chains: [sepolia],
+    chains: [mainnet, polygon, sepolia, anvil],
     transports: {
       // RPC URL for each chain
-      [sepolia.id]: http(sepolia.rpcUrls.default.http[0]),
+      [mainnet.id]: http(),
+      [polygon.id]: http(),
+      [sepolia.id]: http(),
+      [anvil.id]: http(),
     },
 
     // Required API Keys

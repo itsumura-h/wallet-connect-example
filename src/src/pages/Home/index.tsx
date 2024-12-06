@@ -1,20 +1,15 @@
-import { ConnectKitButton } from "connectkit";
-import { useAccount } from "wagmi";
 
-const WalletInfo = () => {
-	const { address, isConnecting, isDisconnected } = useAccount();
-	if (isConnecting) return <div>Connecting...</div>;
-	if (isDisconnected) return <div>Disconnected</div>;
-	return <div>Connected Wallet: {address}</div>;
-};
+import { ConnectKitWalletConnect } from "../../components/ConnectKitWalletConnect";
+import { WalletInfo } from "../../components/WalletInfo";
 
 export function Home() {
 	return (
 		<>
-			<section class="py-8 lg:w-3/4 mx-auto">
-				<h1 class="text-2xl font-bold">ConnectKit Wallet Connect Example</h1>
-				<ConnectKitButton />
+			<section class="py-8 px-4 lg:w-3/4 mx-auto">
 				<WalletInfo />
+			</section>
+			<section class="py-8 px-4 lg:w-3/4 mx-auto">
+				<ConnectKitWalletConnect />
 			</section>
 		</>
 	);
